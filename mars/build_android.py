@@ -166,7 +166,7 @@ if __name__ == '__main__':
             # x86：此 ABI 适用于支持通常称为“x86”、“i386”或“IA-32”的指令集的 CPU。
             # x86_64：此 ABI 适用于支持通常称为“x86-64”的指令集的 CPU。
             # armeabi：此 ABI 适用于基于 ARMv5 的 32 位CPU。
-            archs = set(['armeabi-v7a'])
+            archs = set(['armeabi-v7a','arm64-v8a','x86','x86_64','armeabi'])
             num = raw_input('Enter menu:\n1. Clean && build mars.\n2. Build incrementally mars.\n3. Clean && build xlog.\n4. Exit\n')
             if num == '1':
                 main(False, archs)

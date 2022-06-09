@@ -1,0 +1,35 @@
+v1.5.9, 2018-01-25
+------------------
+
+- v1.5.7 fork
+- initial OpenSSL 1.1.x compatibility
+- refactor library lookup on Windows
+
+v1.5.7, 2015-08-31
+------------------
+
+- Rewrite ECC key encoding (issue #39)
+
+v1.5.6, 2015-02-28
+------------------
+
+- replace EVP_DigestInit and EVP_DigestFinal by *_ex (issue #32)
+- SHA256 for sign/verify operations (issue #32)
+- fix arithmetic.py (issue #30)
+
+v1.5.5, 2014-10-09
+------------------
+
+- Change licence to BSD (issue #24)
+- Rewrite test.py with unittest (issue #27)
+- Add constant time equality comparison (issue #23)
+- add arithmetic.py (pull request #21)
+- add some functions in openssl.py (pull request #22)
+- raise exception if RAND_bytes failed (pull request #22)
+
+v1.5.4, 2014-08-25
+------------------
+
+- Add CHANGES.txt according to pip conventions (issue #19)
+- PEP8 (issue #20)
+- Relative imports (issue #18)

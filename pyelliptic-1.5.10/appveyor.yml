@@ -1,0 +1,20 @@
+os: Visual Studio 2017
+version: '{branch}-{build}'
+
+platform:
+  - x64
+
+environment:
+  matrix:
+    - PYTHON: "C:\\Python35-x64"
+      PYTHON_VERSION: "3.5.0"
+      PYTHON_ARCH: "64"
+
+build: off
+
+install:
+  - set PATH=%PYTHON%;%PYTHON%\Scripts;%PATH%
+
+test_script:
+  - python setup.py test
+  - python setup.py test --openssl-1-1

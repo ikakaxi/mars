@@ -1,0 +1,15 @@
+language: generic
+
+os: osx
+osx_image: xcode9.2
+
+cache:
+  directories:
+    - $HOME/Library/Caches/Homebrew
+
+before_install:
+  - brew install python3
+
+script:
+  - python3 setup.py test
+  - python3 setup.py test --openssl-1-1
