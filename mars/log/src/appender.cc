@@ -871,7 +871,7 @@ void appender_open(TAppenderMode _mode, const char* _dir, const char* _nameprefi
     
     char mark_info[512] = {0};
     get_mark_info(mark_info, sizeof(mark_info));
-
+    if(false){
     if (buffer.Ptr()) {
         __writetips2file("~~~~~ begin of mmap ~~~~~\n");
         __log2file(buffer.Ptr(), buffer.Length(), false);
@@ -896,19 +896,19 @@ void appender_open(TAppenderMode _mode, const char* _dir, const char* _nameprefi
 
     snprintf(logmsg, sizeof(logmsg), "log appender mode:%d, use mmap:%d", (int)_mode, use_mmap);
     xlogger_appender(NULL, logmsg);
-    
+
     if (!sg_cache_logdir.empty()) {
         boost::filesystem::space_info info = boost::filesystem::space(sg_cache_logdir);
         snprintf(logmsg, sizeof(logmsg), "cache dir space info, capacity:%" PRIuMAX" free:%" PRIuMAX" available:%" PRIuMAX, info.capacity, info.free, info.available);
         xlogger_appender(NULL, logmsg);
     }
-    
+
     boost::filesystem::space_info info = boost::filesystem::space(sg_logdir);
     snprintf(logmsg, sizeof(logmsg), "log dir space info, capacity:%" PRIuMAX" free:%" PRIuMAX" available:%" PRIuMAX, info.capacity, info.free, info.available);
     xlogger_appender(NULL, logmsg);
 
     BOOT_RUN_EXIT(appender_close);
-
+    }
 }
 
 void appender_open_with_cache(TAppenderMode _mode, const std::string& _cachedir, const std::string& _logdir,
@@ -965,8 +965,9 @@ void appender_close() {
     get_mark_info(mark_info, sizeof(mark_info));
     char appender_info[728] = {0};
     snprintf(appender_info, sizeof(appender_info), "$$$$$$$$$$" __DATE__ "$$$" __TIME__ "$$$$$$$$$$%s\n", mark_info);
+    if(false){
     xlogger_appender(NULL, appender_info);
-
+    }
     sg_log_close = true;
 
     sg_cond_buffer_async.notifyAll();

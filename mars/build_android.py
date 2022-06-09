@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding:utf8 -*-
 import os
 import sys
 import glob
@@ -160,7 +161,12 @@ if __name__ == '__main__':
             main(False, archs, tag=sys.argv[1])
             break
         else:
-            archs = set(['armeabi'])
+            # armeabi-v7a：此 ABI 适用于第 7 代及以上的基于 32 位 ARM 的 CPU。
+            # arm64-v8a：此 ABI 适用于基于 ARMv8-A 的 CPU，支持 64 位 AArch64 架构。
+            # x86：此 ABI 适用于支持通常称为“x86”、“i386”或“IA-32”的指令集的 CPU。
+            # x86_64：此 ABI 适用于支持通常称为“x86-64”的指令集的 CPU。
+            # armeabi：此 ABI 适用于基于 ARMv5 的 32 位CPU。
+            archs = set(['armeabi-v7a'])
             num = raw_input('Enter menu:\n1. Clean && build mars.\n2. Build incrementally mars.\n3. Clean && build xlog.\n4. Exit\n')
             if num == '1':
                 main(False, archs)
