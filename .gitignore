@@ -13,7 +13,6 @@ xcuserdata
 xcshareddata
 
 /mars/comm/verinfo.h
-/mars/libraries/*/
 /mars/*/libs/
 !/mars/boost/libs/
 /samples/iOS/iOSDemo/Kernel/MarsLib/
